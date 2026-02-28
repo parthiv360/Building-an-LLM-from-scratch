@@ -1,0 +1,152 @@
+
+This document contains the qualitative evaluation for Sinusoidal Positional Encoding, grouped query attention for different key value pairs.
+
+-----------------------------------------------------------------
+Sinusoidal Positional Encoding
+
+
+
+Sample 1
+Prefix:
+ People vary in their reactions to mosquito bites. Most people
+Ground-truth:
+ People vary in their reactions to mosquito bites. Most people develop itchy, raised bumps on the skin that last several days. No treatment is necessary, but calamine lotion or over-the-counter hydrocortisone cream can reduce itching. A few people have a significant allergy to mosquito bites. The bites can result in what’s called a large local reaction: swelling, blistering, itching, and
+Model prediction:
+ People vary in their reactions to mosquito bites. Most peopled and and and and and and and and and and and and and and and and and and and and and and and and and and and and and 
+Inference time: 0.9590814113616943 s
+
+Sample 2
+Prefix:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence
+Ground-truth:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence in U.S. Researchers at the Johns Hopkins Bloomberg School of Public Health contributed to a new Centers for Disease Control and Prevention (CDC) report that estimates the prevalence of Autism Spectrum Disorders (ASD) as affecting 1 in 88 U.S. children overall, and 1 in 54 boys. This is the third
+Model prediction:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence and and and and and and and and and and and and and and and and and and and and and and and and and and and and and and
+Inference time: 0.8874943256378174 s
+
+Sample 3
+Prefix:
+ CTComms sends on average 2 million emails monthly on behalf
+Ground-truth:
+ CTComms sends on average 2 million emails monthly on behalf of over 125 different charities and not for profits. Take the complexity of technology and stir in the complexity of the legal system and what do you get? Software licenses! If you've ever attempted to read one you know how true this is, but you have to know a little
+Model prediction:
+ CTComms sends on average 2 million emails monthly on behalf, and and and and and and and and and and and and and and and and and and and and and and and and and and and and and 
+Inference time: 0.9289810657501221 s
+
+Sample 4
+Prefix:
+ The formation of counties was one of the first matters
+Ground-truth:
+ The formation of counties was one of the first matters attended to by the Lords Proprietors after they received their charter in 1663 from King Charles II for the vast tract of land in America he called the province of Carolina. In 1664 the Proprietors formed "all that parte of the province which lyeth on the north east side or
+Model prediction:
+ The formation of counties was one of the first matters and and and and and and and and and and and and and and and and and and and and and and and and and and and and and and
+Inference time: 0.8803892135620117 s
+
+Sample 5
+Prefix:
+ When he shot President Lincoln, John Wilkes Booth was 26
+Ground-truth:
+ When he shot President Lincoln, John Wilkes Booth was 26 years old, and one of the nation’s most famous actors. (Charles DeForest Fredericks/National Portrait Gallery) John Wilkes Booth, a Maryland native, spent the war performing in theatrical productions. But the conflict was never far from his mind. In a letter to his mother, he expressed chagrin that he hadn’t joined
+Model prediction:
+ When he shot President Lincoln, John Wilkes Booth was 26, and and and and and and and and and and and and and and and and and and and and and and and and and and and and and 
+Inference time: 0.8847689628601074 s
+
+------------------------------------------
+
+
+GQA( 6 key/value groups)
+
+
+
+Sample 1
+Prefix:
+ People vary in their reactions to mosquito bites. Most people
+Ground-truth:
+ People vary in their reactions to mosquito bites. Most people develop itchy, raised bumps on the skin that last several days. No treatment is necessary, but calamine lotion or over-the-counter hydrocortisone cream can reduce itching. A few people have a significant allergy to mosquito bites. The bites can result in what’s called a large local reaction: swelling, blistering, itching, and
+Model prediction:
+ People vary in their reactions to mosquito bites. Most people of the of of of of of of of the of the of the of the of the of the of the of of of of of of of of of of the of 
+Inference time: 0.9764840602874756 s
+
+Sample 2
+Prefix:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence
+Ground-truth:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence in U.S. Researchers at the Johns Hopkins Bloomberg School of Public Health contributed to a new Centers for Disease Control and Prevention (CDC) report that estimates the prevalence of Autism Spectrum Disorders (ASD) as affecting 1 in 88 U.S. children overall, and 1 in 54 boys. This is the third
+Model prediction:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence of the of of of the of of of the of the of the of the of the of the of the of the of the of the of the of the of the of the of the 
+Inference time: 0.990001916885376 s
+
+Sample 3
+Prefix:
+ CTComms sends on average 2 million emails monthly on behalf
+Ground-truth:
+ CTComms sends on average 2 million emails monthly on behalf of over 125 different charities and not for profits. Take the complexity of technology and stir in the complexity of the legal system and what do you get? Software licenses! If you've ever attempted to read one you know how true this is, but you have to know a little
+Model prediction:
+ CTComms sends on average 2 million emails monthly on behalf of the of the of the of the of of the of the of the of the of the of the of the of the of of of the of of of of of the of the 
+Inference time: 1.192983865737915 s
+
+Sample 4
+Prefix:
+ The formation of counties was one of the first matters
+Ground-truth:
+ The formation of counties was one of the first matters attended to by the Lords Proprietors after they received their charter in 1663 from King Charles II for the vast tract of land in America he called the province of Carolina. In 1664 the Proprietors formed "all that parte of the province which lyeth on the north east side or
+Model prediction:
+ The formation of counties was one of the first matters of of the of of the of of of of the of the of the of the of the of the of the of the of of of of of of of of of the 
+Inference time: 1.137953519821167 s
+
+Sample 5
+Prefix:
+ When he shot President Lincoln, John Wilkes Booth was 26
+Ground-truth:
+ When he shot President Lincoln, John Wilkes Booth was 26 years old, and one of the nation’s most famous actors. (Charles DeForest Fredericks/National Portrait Gallery) John Wilkes Booth, a Maryland native, spent the war performing in theatrical productions. But the conflict was never far from his mind. In a letter to his mother, he expressed chagrin that he hadn’t joined
+Model prediction:
+ When he shot President Lincoln, John Wilkes Booth was 26, of of of of of of of the of the of the of the of the of the of the of the of of of of of of of of the of the of 
+Inference time: 0.9218659400939941 s
+
+--------------------------------------------------------------------
+GQA(1 key value group):
+
+Sample 1
+Prefix:
+ People vary in their reactions to mosquito bites. Most people
+Ground-truth:
+ People vary in their reactions to mosquito bites. Most people develop itchy, raised bumps on the skin that last several days. No treatment is necessary, but calamine lotion or over-the-counter hydrocortisone cream can reduce itching. A few people have a significant allergy to mosquito bites. The bites can result in what’s called a large local reaction: swelling, blistering, itching, and
+Model prediction:
+ People vary in their reactions to mosquito bites. Most peopled and and and and and and and and and and and and and and and and and and and and and and and and and and and and and 
+Inference time: 1.0048279762268066 s
+
+Sample 2
+Prefix:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence
+Ground-truth:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence in U.S. Researchers at the Johns Hopkins Bloomberg School of Public Health contributed to a new Centers for Disease Control and Prevention (CDC) report that estimates the prevalence of Autism Spectrum Disorders (ASD) as affecting 1 in 88 U.S. children overall, and 1 in 54 boys. This is the third
+Model prediction:
+ March 30, 2012 CDC Releases New Report on Autism Prevalence and and and and and and and and and and and and and and and and and and and and and and and and and and and and and and
+Inference time: 1.1514863967895508 s
+
+Sample 3
+Prefix:
+ CTComms sends on average 2 million emails monthly on behalf
+Ground-truth:
+ CTComms sends on average 2 million emails monthly on behalf of over 125 different charities and not for profits. Take the complexity of technology and stir in the complexity of the legal system and what do you get? Software licenses! If you've ever attempted to read one you know how true this is, but you have to know a little
+Model prediction:
+ CTComms sends on average 2 million emails monthly on behalf and and and and and and and and and and and and and and and and and and and and and and and and and and and and and and
+Inference time: 1.2031159400939941 s
+
+Sample 4
+Prefix:
+ The formation of counties was one of the first matters
+Ground-truth:
+ The formation of counties was one of the first matters attended to by the Lords Proprietors after they received their charter in 1663 from King Charles II for the vast tract of land in America he called the province of Carolina. In 1664 the Proprietors formed "all that parte of the province which lyeth on the north east side or
+Model prediction:
+ The formation of counties was one of the first matters and and and and and and and and and and and and and and and and and and and and and and and and and and and and and and
+Inference time: 0.9324500560760498 s
+
+Sample 5
+Prefix:
+ When he shot President Lincoln, John Wilkes Booth was 26
+Ground-truth:
+ When he shot President Lincoln, John Wilkes Booth was 26 years old, and one of the nation’s most famous actors. (Charles DeForest Fredericks/National Portrait Gallery) John Wilkes Booth, a Maryland native, spent the war performing in theatrical productions. But the conflict was never far from his mind. In a letter to his mother, he expressed chagrin that he hadn’t joined
+Model prediction:
+ When he shot President Lincoln, John Wilkes Booth was 26, and and and and and and and and and and inter and interstrant and and and and and and and and and and and and 
+Inference time: 0.9418420791625977 s
